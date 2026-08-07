@@ -4,19 +4,24 @@ import { Color, RenderContext } from "@wwtelescope/engine";
 
 declare module "@wwtelescope/engine" {
 
-  export class Coordinates {
-    static parse(data: string): number;
-    static parseRA(ra: string, degrees: true): number;
-    static parseDec(dec: string): number;
+  // export class Coordinates {
+  //   static parse(data: string): number;
+  //   static parseRA(ra: string, degrees: true): number;
+  //   static parseDec(dec: string): number;
+  // }
+  export namespace Coordinates {
+    function parse(data: string): number;
+    function parseRA(ra: string, degrees: boolean): number;
+    function parseDec(dec: string): number;
   }
 
   export const ss;
 
   export class Matrix3d {}
 
-  export class Vector3d {
-    static create(x: number, y: number, z: number): Vector3d;
-  }
+  // export class Vector3d {
+  //   static create(x: number, y: number, z: number): Vector3d;
+  // }
 
   export class SimpleLineList {
     pure2D: boolean;
